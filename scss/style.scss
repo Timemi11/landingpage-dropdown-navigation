@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap');
+@import "./color.scss";
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    
+}
+html,body{
+    background-color: $AlmostWhite;
+}
+.close,.hamberger{
+    display: none;
+}
+
+// NAVBAR
+.navbar{
+    font-family: 'Epilogue';
+    font-weight: 500;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    & .logobrandlink {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & h1{
+            font-size: 30px;
+            cursor: default;
+        }
+        & ul{
+            font-size: 15px;
+            display: flex;
+            & li {
+                list-style-type:none;
+                & a{
+                    color: $MediumGray;
+                    padding: 0 2rem;
+                    text-decoration:none;
+                    &:hover{
+                        color: $AlmostBlack;
+                    }
+                    & i{
+                    font-size: 12px;
+                   }
+                }
+            }
+            & .dropdown{
+                position: relative;
+                & .dropdowncontent{
+                    display: none;
+                    padding: 20px 32px;
+                    top:30px;
+                    right: 30px;
+                    border: 1px solid black;
+                    width: 170px;
+                    height: 170px;
+                    position: absolute;
+                    overflow: hidden;
+                    background-color: $AlmostWhite;
+                    border: none;
+                    border-radius: 1rem;
+                    box-shadow: 
+                    0 0 1px rgba($AlmostBlack,.2)
+                    ,0 0 20px rgba($AlmostBlack,.3)
+                    ;
+                    transition: transform .4s ease;
+                 
+                    & a{
+                        float: none;
+                        display: block;
+                        height: 35px;
+                        width: 100%;  
+                        padding:0 ;
+                        text-align: left;
+                        & span{
+                            display: inline-block;
+                            padding: 0 0 0 5px;
+                        }
+                    }
+                }
+            }
+            & .dropdown:nth-child(2){
+                & .dropdowncontent{
+                    left: 30px;
+                    padding: 30px 40px;   
+                    height: 150px;
+                    width: 150px;    
+                }
+            }
+        
+        
+        }
+    }
+    & .login{
+        display: flex;
+        & li{
+            list-style-type: none;
+            & a{
+                text-decoration: none;
+                color:$MediumGray;
+                padding:10px 25px ;
+                &:hover{
+                    color: $AlmostBlack;
+                }
+            }
+            &:nth-child(2) a{
+                border-radius: .5rem;
+                border:  2px solid $MediumGray;
+                &:hover{
+                    border: 2px solid $AlmostBlack;
+                }
+            }
+        }
+    }
+}
+// END NAVBAR
+
+aside{
+    display: none;
+}
+
+
+
+// HERO
+    .container{
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        margin-top:50px ;
+        display: flex;
+        flex-direction: row-reverse;
+        font-size: 18px;
+        font-family: 'Epilogue';
+        & .imageshow{
+            background-image: url(/images/image-hero-desktop.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 450px;
+            height: 550px;
+        }
+        & .content{
+            width: 60%;
+            &  h1{
+                padding-top:100px;
+                font-weight: 700;
+                font-size: 50px;
+            }
+            & p{
+                font-weight: 500;
+                padding: 50px 200px 50px 0;
+                line-height: 30px;
+                color: $MediumGray;
+            }
+            & button{
+                font-weight: 700;
+                padding: 1.2rem 2.5rem;
+                border-radius: 1rem;
+                border: 2px solid $AlmostBlack;
+                background-color: $AlmostBlack;
+                color: $AlmostWhite;
+                cursor: pointer;
+                &:hover{
+                    background-color: transparent;
+                    border: 2px solid $AlmostBlack;
+                    color: $AlmostBlack;
+                }
+            }
+            & .support{
+                display: flex;
+                margin-top: 80px;
+                & .logo{
+                    padding: 0 10px;
+                }
+            }
+        }
+
+    }
+    
+
+// 
+
+@keyframes opensidebar {
+    from{
+        right:-250px;
+    }
+    to{
+        right: 0;
+    }
+}
+
+
+
+// MEDIA QUERIES
+@media screen and (min-width:648px) and (max-width:1000px){
+    // NAVBAR
+      .navbar{
+        max-width: 680px;
+        justify-content: space-around;
+        & .logobrandlink {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & h1{
+                font-size: 20px;
+                cursor: default;
+            }
+            & ul{
+                font-size: 10px;
+                display: flex;
+                & li {
+                    list-style-type:none;
+                    & a{
+                        color: $MediumGray;
+                        padding: 0 1rem;
+                        text-decoration:none;
+                        &:hover{
+                            color: $AlmostBlack;
+                        }
+                        & i{
+                        font-size: 10px;
+                       }
+                    }
+                }
+            }  
+        }
+        .login{
+            font-size: 10px;
+        }
+     }
+    //  End
+
+
+     // HERO
+    .container{
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+        margin-top:50px ;
+        display: flex;
+        flex-direction: row-reverse;
+        font-size: 18px;
+        font-family: 'Epilogue';
+        & .imageshow{
+            background-image: url(/images/image-hero-desktop.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 40%;
+            height: 550px;
+        }
+        & .content{
+            width: 60%;
+            &  h1{
+                padding-top:100px;
+                font-weight: 700;
+                font-size: 50px;
+            }
+            & p{
+                font-weight: 500;
+                padding: 50px 200px 50px 0;
+                line-height: 30px;
+                color: $MediumGray;
+            }
+            & button{
+                position: fixed;
+                font-weight: 700;
+                padding: 1.2rem 2.5rem;
+                border-radius: 1rem;
+                left: 50%;
+                transform: translateX(-50%);
+                border: 2px solid $AlmostBlack;
+                background-color: $AlmostBlack;
+                color: $AlmostWhite;
+                cursor: pointer;
+                &:hover{
+                    background-color: transparent;
+                    border: 2px solid $AlmostBlack;
+                    color: $AlmostBlack;
+                }
+            }
+            & .support{
+                display: flex;
+                margin-top: 160px;
+                & .logo{
+                    padding: 0 40px;
+                }
+            }
+        }
+
+    }
+    
+
+// 
+
+
+}
+
+@media screen and (max-width:648px){
+    // NAVBAR
+    .close{
+        display: block;
+    }
+    .hamberger{
+        display: block;
+        cursor: pointer;
+        
+    }
+    .navbar{
+            max-width: 300px;
+        & .logobrandlink{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        & .login,& .logobrandlink ul{
+            display: none;
+        }
+    }
+    aside{
+        display: none;
+        background-color: rgba($AlmostBlack,.8);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    
+        
+}
+    .sidebar{
+        font-family: 'Epilogue';
+        position: fixed;
+        overflow: auto;
+        top: 0;
+        right: 0;
+        width: 250px;
+        background-color: $AlmostWhite;
+        animation: opensidebar .4s ease;
+        box-shadow: 
+            0 0 2px rgba($AlmostBlack,.2),
+            0 0 5px rgba($AlmostBlack,.3)
+        ;
+        height: 100vh;
+            & .close{
+                font-size: 30px;
+                padding: 1rem 10px;
+                text-align: right;
+                
+                svg:hover{
+                    cursor: pointer;
+                 
+                }
+            }
+            & ul{
+                font-size: 15px;
+                display: block;
+                & li {
+                    
+                    list-style-type:none;
+                    padding: 1rem 2rem;
+                    &:hover {
+                        cursor: pointer;
+           
+                    }
+                   
+                    & a{
+                        font-size: 20px;
+                        color: $MediumGray;
+                        text-decoration:none;
+                        &:hover{
+                            color: $AlmostBlack;
+                        }
+                        & i{
+                        font-size: 12px;
+                       }
+                    }
+                }
+                & .dropdown{
+                    height: auto;
+                    display: block;
+                    & .dropdowncontent{
+                        display: none;
+                        border: 1px solid black;
+                        width: 100%;
+                        height: auto;
+                        border: none;   
+                        z-index: 1;
+                        & a{
+                            &:hover{
+                                color: $AlmostBlack;
+                            }
+                            float: none;
+                            display: block;
+                            width: 100%;  
+                            padding:18px 20px ;
+                            text-align: left;
+                           
+                           
+                           
+                            & span{
+                                display: inline-block;
+                                padding: 0 0 0 5px;
+                            }
+                        }
+                    }
+                }
+                & .dropdown:nth-child(2){
+                    & .dropdowncontent{
+                        left: 0;
+                        padding: 0;   
+                        height: 150px;
+                        width: 100%;    
+                    }
+                }
+            
+            
+            }
+        
+        & .login{
+            display: block;
+            & li{
+                width: 100%;
+                text-align: center;
+                list-style-type: none;
+                display: block;
+                & a{
+                    text-decoration: none;
+                    color:$MediumGray;
+                    padding:10px 50px ;
+                    &:hover{
+                        color: $AlmostBlack;
+                    }
+                }
+                &:nth-child(2) a{
+                    border-radius: .5rem;
+                    border:  2px solid $MediumGray;
+                    &:hover{
+                        border: 2px solid $AlmostBlack;
+                    }
+                }
+            }
+        }
+    }
+    
+    // 
+
+// HERO
+.container{
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top:50px ;
+    display: block;
+    font-size: 18px;
+    font-family: 'Epilogue';
+    & .imageshow{
+        background-image: url(/images/image-hero-mobile.png);
+        background-size:  contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 400px;
+    }
+    & .content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &  h1{
+            white-space: nowrap;
+            text-align: center;
+            padding-top:0;
+            font-weight: 700;
+            font-size: 8.8vw;
+            & br {
+                display: none;
+            }
+        }
+        & p{
+            font-weight: 500;
+           padding: 1rem;
+           text-align: center;
+            line-height: 30px;
+            color: $MediumGray;
+        }
+        & button{
+            font-weight: 700;
+            padding: 1.2rem 2.5rem;
+            border-radius: 1rem;
+            border: none;
+            
+            background-color: $AlmostBlack;
+            color: $AlmostWhite;
+            cursor: pointer;
+            &:hover{
+                background-color: transparent;
+                border: 2px solid $AlmostBlack;
+                color: $AlmostBlack;
+            }
+        }
+        & .support{
+            display: flex;
+            margin-top: 60px;
+            & .logo{
+                padding: 10px 10px;
+            }
+        }
+    }
+
+}
+
+
+// 
+
+
+
+}
+
+// 
